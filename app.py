@@ -1,3 +1,4 @@
+from matplotlib.pyplot import xlabel
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -58,40 +59,35 @@ def pageII():
 
 
 	st.subheader('Histograma de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar histograma'):
 		st.write(sns.distplot(df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Cantidad de vuelos', ylabel='Frecuencia')
 
 	st.subheader('Gráfico de barras de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar gráfico de barras'):
 		st.write(sns.barplot(x=df['Fecha'], y=df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Fecha', ylabel='Cantidad')
 
 	st.subheader('Gráfico de caja de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar gráfico de caja'):
 		st.write(sns.boxplot(x=df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Cantidad de vuelos')
 
 	st.subheader('Gráfico de dispersión de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar gráfico de dispersión'):
 		st.write(sns.scatterplot(x=df['Fecha'], y=df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Fecha', ylabel='Cantidad')
 
 	st.subheader('Gráfico de líneas de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar gráfico de líneas'):
 		st.write(sns.lineplot(x=df['Fecha'], y=df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Fecha', ylabel='Cantidad')
 
 	st.subheader('Gráfico de violín de la cantidad de vuelos por día')
-
 	if st.checkbox('Mostrar gráfico de violín'):
 		st.write(sns.violinplot(x=df['Cantidad']))
-		st.pyplot()
+		st.pyplot(xlabel='Cantidad de vuelos', ylabel='Densidad')
+	# 
 
 	st.markdown('***')
 
